@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <title>Learn D3.js</title>
+    </head>
+    <body>
+
+        <h1>First heading</h1>
+
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>
+
+<script>
+  d3.select('h1').style('color', 'orange')
+  .attr('class', 'heading')
+  .text('updated hi tag');
+
+  d3.select('body').append('p').text('First Paragraph');
+  d3.select('body').append('p').text('Second Paragraph');
+  d3.select('body').append('p').text('3rd Paragraph');
+
+  d3.selectAll('p').style('color', 'blue')
+</script>
