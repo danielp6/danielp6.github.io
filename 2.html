@@ -8,14 +8,11 @@
 <body>
   <svg width="960" height = "500"></svg>
   <script>
-    d3.csv("VGM.csv"),(function(d) {
-      return {
-		  Name : d.Name
-	  };
-  }, function(error,rows) {
+    d3.csv("VGM.csv"),(function(data) {
+      console.log(data);
+  } function(error, rows) {
 	  console.log(rows);
-	  //asdf
-  });
+  }
 
   </script>
 
