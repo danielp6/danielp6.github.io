@@ -34,7 +34,7 @@ var yAxis = d3.svg.axis()
 //     d.Year_of_Release = d.Year_of_Release;
 // });
 
-    d3.csv("VGM.csv", function(error, csv_data) {
+    d3.csv("VGM-1.csv", function(error, csv_data) {
      var data = d3.nest()
       .key(function(d) { return d.Year_of_Release;})
       .rollup(function(d) {
