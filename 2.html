@@ -8,8 +8,12 @@
 <body>
   <svg width="960" height = "500"></svg>
   <script>
-    d3.csv("VGM.csv").get(function(error,data) {
-      console.log(data);
+    d3.csv("VGM.csv"),(function(d) {
+      return {
+		  Name : d.Name
+	  };
+  }, function(error,rows) {
+	  console.log(rows);
   });
 
   </script>
