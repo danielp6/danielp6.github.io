@@ -31,6 +31,6 @@ d3.csv("VGM.csv", function(error,data) {
   if(error) console.log("Error loading data");
 
   data.forEach(function(d) {
-    d.name = d.name
-    console.log(d.name);
+    d.Name = d.Name
+    console.log(d.Name);
 })});
