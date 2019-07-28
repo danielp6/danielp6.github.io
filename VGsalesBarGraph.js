@@ -59,16 +59,15 @@ svg.selectAll('rect')
     .append('rect')
     .attr("height", 0)
     .attr("y", height)
-    .transition().duration(3000)
+    .transition().duration(2500)
     .delay( function(d,i) { return i * 200; })
-    // attributes can be also combined under one .attr
     .attr({
       "x": function(d) { return xScale(d.Year_of_Release); },
       "y": function(d) { return yScale(d.Global_Sales); },
       "width": xScale.rangeBand(),
       "height": function(d) { return  height - yScale(d.Global_Sales); }
     })
-    .style("fill", function(d,i) { return 'rgb(20, 20, ' + ((i * 30) + 100) + ')'});
+    .style("fill", "blue");
 
 
         svg.selectAll('text')
