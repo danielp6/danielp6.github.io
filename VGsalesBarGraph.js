@@ -27,13 +27,27 @@ var yAxis = d3.svg.axis()
     .scale(yScale)
     .orient("left");
 
-d3.csv("VGM.csv", function(error,data) {
-  if(error) console.log("Error loading data");
+// d3.csv("VGM.csv", function(error,data) {
+//   if(error) console.log("Error loading data");
+//
+//   data.forEach(function(d) {
+//     d.Year_of_Release = d.Year_of_Release;
+// });
 
-  data.forEach(function(d) {
-    d.Year_of_Release = d.Year_of_Release;
-	d.Global_Sales = +d.Global_Sales;
+d3.csv("VGM.csv", function(error, csv_data) {
+ var data = d3.nest()
+  .key(function(d) { return d.Year_of_Release;})
+  .rollup(function(d) {
+   return d3.sum(d, function(g) {return g.Global_Sales; });
+  }).entries(csv_data);
 });
+
+data.forEach(function(d) {
+ d.Year_of_Release = d.key;
+ d.Global_Sales = d.values;
+});
+
+
 
 xScale.domain(data.map(function(d) { return d.Year_of_Release; }) );
 yScale.domain([0, d3.max(data, function(d) { return d.Global_Sales; } ) ]);
