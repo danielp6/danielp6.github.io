@@ -114,3 +114,5 @@ svg.selectAll('rect')
         .style("text-anchor", "middle")
         .text("Global sales in Millions of Dollars");
 });
+
+//d
