@@ -76,7 +76,7 @@ svg.selectAll('rect')
             .append('text')
 
 
-            // 
+            //
             // .text(function(d){
             //     return d.Global_Sales;
             // })
@@ -112,5 +112,5 @@ svg.selectAll('rect')
         .attr("x", -height/2)
         .attr("dy", "-3em")
         .style("text-anchor", "middle")
-        .text("Trillions of US Dollars ($)");
+        .text("Global sales in Millions of Dollars");
 });
