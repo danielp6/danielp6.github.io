@@ -76,19 +76,19 @@ svg.selectAll('rect')
             .append('text')
 
 
-
-            .text(function(d){
-                return d.Global_Sales;
-            })
-            .attr({
-                "x": function(d){ return xScale(d.Year_of_Release) +  xScale.rangeBand()/2; },
-                "y": function(d){ return yScale(d.Global_Sales)+ 12; },
-                "font-family": 'sans-serif',
-                "font-size": '13px',
-                "font-weight": 'bold',
-                "fill": 'white',
-                "text-anchor": 'middle'
-            });
+            // 
+            // .text(function(d){
+            //     return d.Global_Sales;
+            // })
+            // .attr({
+            //     "x": function(d){ return xScale(d.Year_of_Release) +  xScale.rangeBand()/2; },
+            //     "y": function(d){ return yScale(d.Global_Sales)+ 12; },
+            //     "font-family": 'sans-serif',
+            //     "font-size": '13px',
+            //     "font-weight": 'bold',
+            //     "fill": 'white',
+            //     "text-anchor": 'middle'
+            // });
 
     // Draw xAxis and position the label
     svg.append("g")
