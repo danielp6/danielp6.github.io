@@ -1,5 +1,5 @@
 
-var margin = {top: 20, right: 10, bottom: 100, left:150},
+var margin = {top: 20, right: 10, bottom: 100, left:120},
     width = 700 - margin.right - margin.left,
     height = 500 - margin.top - margin.bottom;
 
@@ -12,8 +12,9 @@ var svg = d3.select("body")
     .append("g")
       .attr("transform","translate(" + margin.left + "," + margin.right + ")");
 
+var mult = Math.max (1, Math.floor (width / x.domain().length));
 var xScale = d3.scale.ordinal()
-    .rangeRoundBands([0,width], 0.1, 0);
+    .rangeRoundBands([0,(x.domain().length * mult)], 0.1, 0);
 
 var yScale = d3.scale.linear()
     .range([height, 0]);
