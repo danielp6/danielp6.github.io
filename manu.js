@@ -13,7 +13,7 @@ var svg = d3.select("body")
       .attr("transform","translate(" + margin.left + "," + margin.right + ")");
 
 var xScale = d3.scale.ordinal()
-    .rangeRoundBands([0,width], 0.2, 0.2);
+    .rangeRoundBands([0,width], 0.1, 0);
 
 var yScale = d3.scale.linear()
     .range([height, 0]);

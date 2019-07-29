@@ -1,5 +1,5 @@
 
-var margin = {top: 20, right: 10, bottom: 100, left:50},
+var margin = {top: 20, right: 10, bottom: 100, left:150},
     width = 700 - margin.right - margin.left,
     height = 500 - margin.top - margin.bottom;
 
@@ -79,7 +79,7 @@ svg.selectAll('rect')
         .append("text")
         .attr("transform", "rotate(-90)")
         .attr("x", -height/2)
-		//.attr("y", width/2)
+		.attr("y", -50)
         .attr("dy", "-3em")
         .style("text-anchor", "middle")
         .text("Global sales in Millions of Dollars");
