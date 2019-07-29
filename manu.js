@@ -1,5 +1,5 @@
 
-var margin = {top: 20, right: 10, bottom: 100, left:150},
+var margin = {top: 20, right: 10, bottom: 100, left:120},
     width = 700 - margin.right - margin.left,
     height = 500 - margin.top - margin.bottom;
 
@@ -13,7 +13,7 @@ var svg = d3.select("body")
       .attr("transform","translate(" + margin.left + "," + margin.right + ")");
 
 var xScale = d3.scale.ordinal()
-    .rangeRoundBands([0,width], 0.2, 0);
+    .rangeRoundBands([0,width], 0.1);
 
 var yScale = d3.scale.linear()
     .range([height, 0]);
@@ -35,9 +35,16 @@ var yAxis = d3.svg.axis()
 
 data.forEach(function(d) {
  d.Manufacturer = d.key;
- console.log(typeof(d.Manufacturer));
  d.Global_Sales = d.values;
 })
+
+var tip = d3.tip()
+  .attr('class', 'd3-tip')
+  .offset([-10, 0])
+  .html(function(d) {
+    return "<strong>Sales:</strong> <span style='color:red'>" + d.Global_Sales + "</span>";
+});
+ svg.call(tip);
 
 xScale.domain(data.map(function(d) { return d.Manufacturer; }) );
 yScale.domain([0, d3.max(data, function(d) { return d.Global_Sales; } ) ]);
@@ -50,6 +57,8 @@ svg.selectAll('rect')
     .attr("y", height)
     .transition().duration(2500)
     .delay( function(d,i) { return i * 200; })
+	.on('mouseover', tip.show)
+    .on('mouseout', tip.hide)
     .attr({
       "x": function(d) { return xScale(d.Manufacturer); },
       "y": function(d) { return yScale(d.Global_Sales); },
@@ -84,4 +93,6 @@ svg.selectAll('rect')
         .attr("dy", "-3em")
         .style("text-anchor", "middle")
         .text("Global sales in Millions of Dollars");
+
+
 });
