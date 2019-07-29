@@ -12,9 +12,10 @@ var svg = d3.select("body")
     .append("g")
       .attr("transform","translate(" + margin.left + "," + margin.right + ")");
 
-var mult = Math.max (1, Math.floor (width / x.domain().length));
-var xScale = d3.scale.ordinal()
-    .rangeRoundBands([0,(xScale.domain().length * mult)], 0.1, 0);
+
+var xScale = d3.scale.ordinal();
+var mult = Math.max (1, Math.floor (width / xScale.domain().length));
+    xScale.rangeRoundBands([0,(xScale.domain().length * mult)], 0.1, 0);
 
 var yScale = d3.scale.linear()
     .range([height, 0]);
