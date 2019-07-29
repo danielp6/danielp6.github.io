@@ -14,7 +14,6 @@ var svg = d3.select("body")
 
 
 var xScale = d3.scale.ordinal()
-	.domain(["Nintendo", "Microsoft"])
     .rangeRoundBands([0,width], 0.2, 0);
 
 var yScale = d3.scale.linear()
@@ -40,7 +39,7 @@ data.forEach(function(d) {
  d.Global_Sales = d.values;
 })
 
-xScale.domain(data.map(function(d) { return d.Manufacturer; }) );
+xScale.domain(["Atari", "Microsoft", "Nintendo", "PC", "Sega", "Sony"]);
 yScale.domain([0, d3.max(data, function(d) { return d.Global_Sales; } ) ]);
 
 svg.selectAll('rect')
