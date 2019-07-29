@@ -1,5 +1,5 @@
 
-var margin = {top: 20, right: 10, bottom: 100, left:120},
+var margin = {top: 20, right: 10, bottom: 100, left:150},
     width = 700 - margin.right - margin.left,
     height = 500 - margin.top - margin.bottom;
 
@@ -11,7 +11,6 @@ var svg = d3.select("body")
       })
     .append("g")
       .attr("transform","translate(" + margin.left + "," + margin.right + ")");
-
 
 var xScale = d3.scale.ordinal()
     .rangeRoundBands([0,width], 0.2, 0);
@@ -36,6 +35,7 @@ var yAxis = d3.svg.axis()
 
 data.forEach(function(d) {
  d.Manufacturer = d.key;
+ console.log(d.Manufacturer);
  d.Global_Sales = d.values;
 })
 
