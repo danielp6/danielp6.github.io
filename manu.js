@@ -14,6 +14,7 @@ var svg = d3.select("body")
 
 
 var xScale = d3.scale.ordinal()
+	.domain([Nintendo, Microsoft])
     .rangeRoundBands([0,width], 0.2, 0);
 
 var yScale = d3.scale.linear()
@@ -29,7 +30,7 @@ var yAxis = d3.svg.axis()
 
     d3.csv("VGM-3.csv", function(error, csv_data) {
      var data = d3.nest()
-      .key(function(d) {if (! (Number.isNaN(d.key)|| d.key == null))  return d.Manufacturer;})
+      .key(function(d) {if (! (Number.isNaN(d.key)|| d.key == ""))  return d.Manufacturer;})
       .rollup(function(d) {
        return d3.sum(d, function(g) {return g.Global_Sales; });
       }).entries(csv_data);
