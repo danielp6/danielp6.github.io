@@ -35,7 +35,7 @@ var yAxis = d3.svg.axis()
 
 data.forEach(function(d) {
  d.Manufacturer = d.key;
- console.log(typeOf(d.Manufacturer));
+ console.log(typeof(d.Manufacturer));
  d.Global_Sales = d.values;
 })
 
