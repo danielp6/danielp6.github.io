@@ -63,9 +63,7 @@ svg.selectAll('rect')
       "width": xScale.rangeBand(),
       "height": function(d) { return  height - yScale(d.Global_Sales); }
     })
-    .style("fill", "blue")
-	.on('mouseover', tip.show)
-    .on('mouseout', tip.hide);
+    .style("fill", "blue");
 
         svg.selectAll('text')
             .data(data)
