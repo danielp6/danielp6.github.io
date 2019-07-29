@@ -64,8 +64,7 @@ svg.selectAll('rect')
       "y": function(d) { return yScale(d.Global_Sales); },
       "width": xScale.rangeBand(),
       "height": function(d) { return  height - yScale(d.Global_Sales); }
-    })
-    .style("fill", "blue");
+  });
 
         svg.selectAll('text')
             .data(data)

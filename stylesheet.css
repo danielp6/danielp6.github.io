@@ -17,9 +17,13 @@ svg {
     font-weight: bold;
 }
 
-/* .rectangle {
+.rect {
   fill: orange;
-} */
+}
+
+.bar {
+    fill: green;
+}
 
 .rect:hover {
   fill: orangered ;
