@@ -14,7 +14,7 @@ var svg = d3.select("body")
 
 var mult = Math.max (1, Math.floor (width / x.domain().length));
 var xScale = d3.scale.ordinal()
-    .rangeRoundBands([0,(x.domain().length * mult)], 0.1, 0);
+    .rangeRoundBands([0,(xScale.domain().length * mult)], 0.1, 0);
 
 var yScale = d3.scale.linear()
     .range([height, 0]);
