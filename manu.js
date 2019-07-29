@@ -1,6 +1,6 @@
 
 var margin = {top: 20, right: 10, bottom: 100, left:50},
-    width = 700 - margin.right - margin.left,
+    width = 800 - margin.right - margin.left,
     height = 500 - margin.top - margin.bottom;
 
 var svg = d3.select("body")
@@ -79,7 +79,7 @@ svg.selectAll('rect')
         .append("text")
         .attr("transform", "rotate(-90)")
         .attr("x", -height/2)
-		.attr("y", -25)
+		.attr("y", -20)
         .attr("dy", "-3em")
         .style("text-anchor", "middle")
         .text("Global sales in Millions of Dollars");
