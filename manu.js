@@ -34,7 +34,7 @@ var yAxis = d3.svg.axis()
       }).entries(csv_data);
 
 data.forEach(function(d) {
- if (! Number.isNaN(d.key)) d.Manufacturer = d.key;
+ if (! (Number.isNaN(d.key)|| d.key == "")) d.Manufacturer = d.key;
  d.Global_Sales = d.values;
 })
 
