@@ -55,7 +55,7 @@ d3.csv("VGM-3.csv", function(error, csv_data) {
     svg.call(tip);
 
     xScale.domain(data.map(function(d) {
-        return d.Manufacturer != "";
+        return d.key;
     }));
     yScale.domain([0, d3.max(data, function(d) {
         return d.Global_Sales;
