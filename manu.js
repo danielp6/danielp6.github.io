@@ -14,7 +14,7 @@ var svg = d3.select("body")
 
 
 var xScale = d3.scale.ordinal()
-	.domain([Nintendo, Microsoft])
+	.domain(["Nintendo", "Microsoft"])
     .rangeRoundBands([0,width], 0.2, 0);
 
 var yScale = d3.scale.linear()
