@@ -57,15 +57,15 @@ svg.selectAll('rect')
     .attr("y", height)
     .transition().duration(2500)
     .delay( function(d,i) { return i * 200; })
-	.on('mouseover', tip.show)
-    .on('mouseout', tip.hide)
     .attr({
       "x": function(d) { return xScale(d.Manufacturer); },
       "y": function(d) { return yScale(d.Global_Sales); },
       "width": xScale.rangeBand(),
       "height": function(d) { return  height - yScale(d.Global_Sales); }
     })
-    .style("fill", "blue");
+    .style("fill", "blue")
+	.on('mouseover', tip.show)
+    .on('mouseout', tip.hide);
 
         svg.selectAll('text')
             .data(data)
