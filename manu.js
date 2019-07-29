@@ -14,7 +14,7 @@ var svg = d3.select("body")
 
 
 var xScale = d3.scale.ordinal()
-    .rangeRoundBands([0,width], 0.1, 0);
+    .rangeRoundBands([0,width], 0.2, 0);
 
 var yScale = d3.scale.linear()
     .range([height, 0]);
@@ -39,7 +39,7 @@ data.forEach(function(d) {
  d.Global_Sales = d.values;
 })
 
-xScale.domain([data.map(function(d) { return d.Manufacturer; }) ]);
+xScale.domain(data.map(function(d) { return d.Manufacturer; }) );
 yScale.domain([0, d3.max(data, function(d) { return d.Global_Sales; } ) ]);
 
 svg.selectAll('rect')
@@ -85,5 +85,3 @@ svg.selectAll('rect')
         .style("text-anchor", "middle")
         .text("Global sales in Millions of Dollars");
 });
-
-//["Atari", "Microsoft", "Nintendo", "PC", "Sega", "Sony"]
