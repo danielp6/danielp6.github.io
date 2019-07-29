@@ -78,7 +78,7 @@ svg.selectAll('rect')
         .call(yAxis)
         .append("text")
         .attr("transform", "rotate(-90)")
-        .attr("x", -height/2 - 10)
+        .attr("x", -height/2 - 30)
         .attr("dy", "-3em")
         .style("text-anchor", "middle")
         .text("Global sales in Millions of Dollars");
