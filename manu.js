@@ -49,7 +49,7 @@ var tip = d3.tip()
 xScale.domain(data.map(function(d) { return d.Manufacturer; }) );
 yScale.domain([0, d3.max(data, function(d) { return d.Global_Sales; } ) ]);
 
-svg.selectAll('rect')
+svg.selectAll(".bar")
     .data(data)
     .enter()
     .append('rect')
