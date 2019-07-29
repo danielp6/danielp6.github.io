@@ -79,7 +79,7 @@ svg.selectAll('rect')
         .append("text")
         .attr("transform", "rotate(-90)")
         .attr("x", -height/2)
-		.attr("y", width/2)
+		//.attr("y", width/2)
         .attr("dy", "-3em")
         .style("text-anchor", "middle")
         .text("Global sales in Millions of Dollars");
