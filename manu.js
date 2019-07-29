@@ -1,5 +1,5 @@
 
-var margin = {top: 20, right: 10, bottom: 100, left:120},
+var margin = {top: 20, right: 10, bottom: 100, left:100},
     width = 700 - margin.right - margin.left,
     height = 500 - margin.top - margin.bottom;
 
@@ -55,6 +55,8 @@ svg.selectAll('rect')
     .append('rect')
     .attr("height", 0)
     .attr("y", height)
+	.on('mouseover', tip.show)
+    .on('mouseout', tip.hide)
     .transition().duration(2500)
     .delay( function(d,i) { return i * 200; })
     .attr({
