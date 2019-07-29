@@ -42,7 +42,7 @@ var tip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([-10, 0])
   .html(function(d) {
-    return "<strong>Sales: $</strong> <span style='color:red'>"+ Math.floor(d.Global_Sales).toFixed(2) + "</span>";
+    return "<strong>Sales:</strong> <span style='color:red'>"+ (d.Global_Sales).toFixed(2) + "</span>";
 });
  svg.call(tip);
 
