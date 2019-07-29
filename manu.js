@@ -28,13 +28,13 @@ var yAxis = d3.svg.axis()
 
     d3.csv("VGM-3.csv", function(error, csv_data) {
      var data = d3.nest()
-      .key(function(d) { return d.Manufacturer;})
+      .key(function(d) {if (! (Number.isNaN(d.key)|| d.key == ""))  return d.Manufacturer;})
       .rollup(function(d) {
        return d3.sum(d, function(g) {return g.Global_Sales; });
       }).entries(csv_data);
 
 data.forEach(function(d) {
- if (! (Number.isNaN(d.key)|| d.key == "")) d.Manufacturer = d.key;
+ d.Manufacturer = d.key;
  d.Global_Sales = d.values;
 })
 
@@ -79,7 +79,7 @@ svg.selectAll('rect')
         .append("text")
         .attr("transform", "rotate(-90)")
         .attr("x", -height/2)
-		//.attr("y", width/2)
+		.attr("y", -20)
         .attr("dy", "-3em")
         .style("text-anchor", "middle")
         .text("Global sales in Millions of Dollars");
