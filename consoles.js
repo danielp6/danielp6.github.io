@@ -26,7 +26,7 @@ var yAxis = d3.svg.axis()
     .scale(yScale)
     .orient("left");
 
-    d3.csv("VGM-1.csv", function(error, csv_data) {
+    d3.csv("VGM-2.csv", function(error, csv_data) {
      var data = d3.nest()
       .key(function(d) { return d.Platform;})
       .rollup(function(d) {
