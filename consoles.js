@@ -30,7 +30,7 @@ var yAxis = d3.svg.axis()
   .scale(yScale)
   .orient("left");
 
-d3.csv("VGM-3.csv", function(error, csv_data) {
+d3.csv("VGM-2.csv", function(error, csv_data) {
   var data = d3.nest()
     .key(function(d) {
       return d.Platform;
@@ -54,7 +54,10 @@ d3.csv("VGM-3.csv", function(error, csv_data) {
     });
   svg.call(tip);
 
-  xScale.domain(["Atari", "Microsoft", "Nintendo", "PC", "Sega", "Sony"]);
+  xScale.domain(
+       	data.map(function(d) {
+           if (d.Platform) {return d.Platform}
+       }));
   yScale.domain([0, d3.max(data, function(d) {
     return d.Global_Sales;
   })]);
