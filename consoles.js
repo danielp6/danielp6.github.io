@@ -54,7 +54,7 @@ d3.csv("VGM-2.csv", function(error, csv_data) {
     });
   svg.call(tip);
 
-  xScale.domain(["2600","3DS","DC","DS","GB","GBA","GC","GEN","PS2","XBX","360","PS","Wii","PSV","PSP","PS3","N64","NES","PC","PS4","SAT","SNES","WiiU","XOne"]);
+  xScale.domain(["2600","3DS","DC","DS","GB","GBA","GC","GEN","PS2","XB","X360","PS","Wii","PSV","PSP","PS3","N64","NES","PC","PS4","SAT","SNES","WiiU","XOne"]);
   yScale.domain([0, d3.max(data, function(d) {
     return d.Global_Sales;
   })]);
