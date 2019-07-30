@@ -33,7 +33,7 @@ var yAxis = d3.svg.axis()
 d3.csv("VGM-3.csv", function(error, csv_data) {
   var data = d3.nest()
     .key(function(d) {
-      return d.Platform;
+      return d.Manufacturer;
     })
     .rollup(function(d) {
       return d3.sum(d, function(g) {
@@ -42,7 +42,7 @@ d3.csv("VGM-3.csv", function(error, csv_data) {
     }).entries(csv_data);
 
   data.forEach(function(d) {
-    d.Platform = d.key;
+    d.Manufacturer = d.key;
     d.Global_Sales = d.values;
   })
 
@@ -74,7 +74,7 @@ d3.csv("VGM-3.csv", function(error, csv_data) {
     })
     .attr({
       "x": function(d) {
-        return xScale(d.Platform);
+        return xScale(d.Manufacturer);
       },
       "y": function(d) {
         return yScale(d.Global_Sales);
