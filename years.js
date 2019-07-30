@@ -54,9 +54,12 @@ d3.csv("VGM-1.csv", function(error, csv_data) {
     });
   svg.call(tip);
 
-  xScale.domain( 	data.map(function(d) {
-       if (d.Year_of_Release) {return d.Year_of_Release}
-  }));
+  var year_array = []
+  for (var i = 1980; i < 2017; i++) {
+      year_array.push(i);
+  }
+  xScale.domain(year_array);
+
   yScale.domain([0, d3.max(data, function(d) {
     return d.Global_Sales;
   })]);
