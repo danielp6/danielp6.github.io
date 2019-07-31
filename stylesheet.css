@@ -91,7 +91,7 @@ svg {
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
- display: none;
+ display: grid;
  font-size: 10px;
  position: absolute;
  background-color: #f1f1f1;
