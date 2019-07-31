@@ -25,8 +25,8 @@ d3.select("svg").remove();
 
 var margin = {
     top: 100,
-    right: 20,
-    bottom: 20,
+    right: 100,
+    bottom: 100,
     left: 100
   },
   width = 700 - margin.right - margin.left,
