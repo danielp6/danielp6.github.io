@@ -103,7 +103,6 @@ svg {
 /* BUFDFSDFDS */
 
 .button {
-  background-color: #4CAF50; /* Green */
   border: none;
   color: white;
   padding: 16px 32px;
@@ -121,4 +120,9 @@ svg {
   background-color: white;
   color: black;
   border: 2px solid #008CBA;
+}
+
+.buttonBlue:hover {
+  background-color: #008CBA;
+  color: white;
 }
