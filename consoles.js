@@ -29,8 +29,8 @@ var margin = {
     bottom: 100,
     left: 100
   },
-  width = 1050 - margin.right - margin.left,
-  height = 750 - margin.top - margin.bottom;
+  width = 840 - margin.right - margin.left,
+  height = 600 - margin.top - margin.bottom;
 
 var svg = d3.select("body")
   .append("svg")
