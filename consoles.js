@@ -1,4 +1,5 @@
 function updateData(year) {
+    console.log(year);
 
 var margin = {
     top: 20,
