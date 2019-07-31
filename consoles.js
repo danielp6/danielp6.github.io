@@ -1,3 +1,7 @@
+function ud() {
+    console.log("my life for nerzul");
+}
+
 var margin = {
     top: 20,
     right: 10,
@@ -173,7 +177,3 @@ d3.csv("VGM-2.csv", function(error, csv_data) {
 
 
 })};
-
-function ud() {
-    console.log("my life for nerzul");
-}
