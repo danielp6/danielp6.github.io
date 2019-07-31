@@ -40,7 +40,8 @@ d3.csv("VGM-2.csv", function(error, csv_data) {
     })
     .rollup(function(d) {
       return d3.sum(d, function(g) {
-          if (year = 2017){ return g.Global_Sales;}
+          console.log(year);
+          if (year == 2017){ return g.Global_Sales;}
           else {if (g.Year_of_Release == year) return g.Global_Sales;}
       });
     }).entries(csv_data);
