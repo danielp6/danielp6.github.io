@@ -138,5 +138,22 @@ d3.csv("VGM-2.csv", function(error, csv_data) {
     .attr("dy", "-3em")
     .style("text-anchor", "middle")
     .text("Global Sales in Millions of Dollars");
+
+if (year == 2017) {
+    svg.append("text")
+        .attr("x", (width / 2))
+        .attr("y", 0 - (margin.top / 2))
+        .attr("text-anchor", "middle")
+        .style("font-size", "16px")
+        .style("text-decoration", "underline")
+        .text("1980-2016"); }
+else {
+    svg.append("text")
+        .attr("x", (width / 2))
+        .attr("y", 0 - (margin.top / 2))
+        .attr("text-anchor", "middle")
+        .style("font-size", "16px") 
+        .style("text-decoration", "underline")
+        .text(year); }
 });
 };
