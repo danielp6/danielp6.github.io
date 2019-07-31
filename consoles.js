@@ -142,7 +142,7 @@ d3.csv("VGM-2.csv", function(error, csv_data) {
 if (year == 2017) {
     svg.append("text")
         .attr("x", (width / 2))
-        .attr("y", 0 - (margin.top / 2))
+        .attr("y", 0 - (margin.top))
         .attr("text-anchor", "middle")
         .style("font-size", "16px")
         .style("text-decoration", "underline")
@@ -151,7 +151,7 @@ if (year == 2017) {
 else {
     svg.append("text")
         .attr("x", (width / 2))
-        .attr("y", 0 - (margin.bottom / 2))
+        .attr("y", 0 - (margin.top))
         .attr("text-anchor", "middle")
         .style("font-size", "16px")
         .style("font-weight", "bold")
