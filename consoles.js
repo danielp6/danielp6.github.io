@@ -170,4 +170,4 @@ d3.csv("VGM-2.csv", function(error, csv_data) {
             });
 
 
-};
+})}});
