@@ -1,5 +1,3 @@
-function updateData(year) {
-    console.log(year);
 
 var margin = {
     top: 20,
@@ -33,88 +31,177 @@ var yAxis = d3.svg.axis()
   .scale(yScale)
   .orient("left");
 
-d3.csv("VGM-2.csv", function(error, csv_data) {
-  var data = d3.nest()
-    .key(function(d) {
-      return d.Platform;
-    })
-    .rollup(function(d) {
-      return d3.sum(d, function(g) {
-          console.log(year);
-          if (year == 2017){ return g.Global_Sales;}
-          else {if (g.Year_of_Release == year) return g.Global_Sales;}
-      });
-    }).entries(csv_data);
+// d3.csv("VGM-2.csv", function(error, csv_data) {
+//   var data = d3.nest()
+//     .key(function(d) {
+//       return d.Platform;
+//     })
+//     .rollup(function(d) {
+//       return d3.sum(d, function(g) {
+//           if (year == 2017){ return g.Global_Sales;}
+//           else {if (g.Year_of_Release == year) return g.Global_Sales;}
+//       });
+//     }).entries(csv_data);
+//
+//   data.forEach(function(d) {
+//     d.Platform = d.key;
+//     d.Global_Sales = d.values;
+//   })
+//
+//   var tip = d3.tip()
+//     .attr('class', 'd3-tip')
+//     .offset([-10, 0])
+//     .html(function(d) {
+//       return "<strong>Sales:</strong> <span style='color:red'>" + (d.Global_Sales).toFixed(2) + "</span>";
+//     });
+//   svg.call(tip);
+//
+//   xScale.domain(["2600","3DS","DC","DS","GB","GBA","GC","GEN","PS2","XB","X360","PS","Wii","PSV","PSP","PS3","N64","NES","PC","PS4","SAT","SNES","WiiU","XOne"]);
+//   yScale.domain([0, d3.max(data, function(d) {
+//     return d.Global_Sales;
+//   })]);
+//
+//   svg.selectAll(".bar")
+//     .data(data)
+//     .enter()
+//     .append('rect')
+//     .attr("class", "bar")
+//     .attr("height", 0)
+//     .attr("y", height)
+//     .on('mouseover', tip.show)
+//     .on('mouseout', tip.hide)
+//     .transition().duration(2500)
+//     .delay(function(d, i) {
+//       return i * 200;
+//     })
+//     .attr({
+//       "x": function(d) {
+//         return xScale(d.Platform);
+//       },
+//       "y": function(d) {
+//         return yScale(d.Global_Sales);
+//       },
+//       "width": xScale.rangeBand(),
+//       "height": function(d) {
+//         return height - yScale(d.Global_Sales);
+//       }
+//     });
+//
+//   svg.selectAll('text')
+//     .data(data)
+//     .enter()
+//     .append('text')
+//
+//   svg.append("g")
+//     .attr("class", "x axis")
+//     .attr("transform", "translate(0," + height + ")")
+//     .call(xAxis)
+//     .selectAll("text")
+//     .attr("dx", "-.8em")
+//     .attr("dy", ".25em")
+//     .attr("transform", "rotate(-60)")
+//     .style("text-anchor", "end")
+//     .attr("font-size", "10px");
+//
+//   svg.append("g")
+//     .attr("class", "y axis")
+//     .call(yAxis)
+//     .append("text")
+//     .attr("transform", "rotate(-90)")
+//     .attr("x", -height / 2)
+//     .attr("y", -50)
+//     .attr("dy", "-3em")
+//     .style("text-anchor", "middle")
+//     .text("Global Sales in Millions of Dollars");
+// });
 
-  data.forEach(function(d) {
-    d.Platform = d.key;
-    d.Global_Sales = d.values;
-  })
+function updateData(year) {
 
-  var tip = d3.tip()
-    .attr('class', 'd3-tip')
-    .offset([-10, 0])
-    .html(function(d) {
-      return "<strong>Sales:</strong> <span style='color:red'>" + (d.Global_Sales).toFixed(2) + "</span>";
+    d3.csv("VGM-2.csv", function(error, csv_data) {
+      var data = d3.nest()
+        .key(function(d) {
+          return d.Platform;
+        })
+        .rollup(function(d) {
+          return d3.sum(d, function(g) {
+              if (year == 2017){ return g.Global_Sales;}
+              else {if (g.Year_of_Release == year) return g.Global_Sales;}
+          });
+        }).entries(csv_data);
+
+      data.forEach(function(d) {
+        d.Platform = d.key;
+        d.Global_Sales = d.values;
+      })
+
+      var tip = d3.tip()
+        .attr('class', 'd3-tip')
+        .offset([-10, 0])
+        .html(function(d) {
+          return "<strong>Sales:</strong> <span style='color:red'>" + (d.Global_Sales).toFixed(2) + "</span>";
+        });
+      svg.call(tip);
+
+      xScale.domain(["2600","3DS","DC","DS","GB","GBA","GC","GEN","PS2","XB","X360","PS","Wii","PSV","PSP","PS3","N64","NES","PC","PS4","SAT","SNES","WiiU","XOne"]);
+      yScale.domain([0, d3.max(data, function(d) {
+        return d.Global_Sales;
+      })]);
+
+      svg.selectAll(".bar")
+        .data(data)
+        .enter()
+        .append('rect')
+        .attr("class", "bar")
+        .attr("height", 0)
+        .attr("y", height)
+        .on('mouseover', tip.show)
+        .on('mouseout', tip.hide)
+        .transition().duration(2500)
+        .delay(function(d, i) {
+          return i * 200;
+        })
+        .attr({
+          "x": function(d) {
+            return xScale(d.Platform);
+          },
+          "y": function(d) {
+            return yScale(d.Global_Sales);
+          },
+          "width": xScale.rangeBand(),
+          "height": function(d) {
+            return height - yScale(d.Global_Sales);
+          }
+        });
+
+      svg.selectAll('text')
+        .data(data)
+        .enter()
+        .append('text')
+
+      svg.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis)
+        .selectAll("text")
+        .attr("dx", "-.8em")
+        .attr("dy", ".25em")
+        .attr("transform", "rotate(-60)")
+        .style("text-anchor", "end")
+        .attr("font-size", "10px");
+
+      svg.append("g")
+        .attr("class", "y axis")
+        .call(yAxis)
+        .append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("x", -height / 2)
+        .attr("y", -50)
+        .attr("dy", "-3em")
+        .style("text-anchor", "middle")
+        .text("Global Sales in Millions of Dollars");
     });
-  svg.call(tip);
 
-  xScale.domain(["2600","3DS","DC","DS","GB","GBA","GC","GEN","PS2","XB","X360","PS","Wii","PSV","PSP","PS3","N64","NES","PC","PS4","SAT","SNES","WiiU","XOne"]);
-  yScale.domain([0, d3.max(data, function(d) {
-    return d.Global_Sales;
-  })]);
 
-  svg.selectAll(".bar")
-    .data(data)
-    .enter()
-    .append('rect')
-    .attr("class", "bar")
-    .attr("height", 0)
-    .attr("y", height)
-    .on('mouseover', tip.show)
-    .on('mouseout', tip.hide)
-    .transition().duration(2500)
-    .delay(function(d, i) {
-      return i * 200;
-    })
-    .attr({
-      "x": function(d) {
-        return xScale(d.Platform);
-      },
-      "y": function(d) {
-        return yScale(d.Global_Sales);
-      },
-      "width": xScale.rangeBand(),
-      "height": function(d) {
-        return height - yScale(d.Global_Sales);
-      }
-    });
 
-  svg.selectAll('text')
-    .data(data)
-    .enter()
-    .append('text')
 
-  svg.append("g")
-    .attr("class", "x axis")
-    .attr("transform", "translate(0," + height + ")")
-    .call(xAxis)
-    .selectAll("text")
-    .attr("dx", "-.8em")
-    .attr("dy", ".25em")
-    .attr("transform", "rotate(-60)")
-    .style("text-anchor", "end")
-    .attr("font-size", "10px");
-
-  svg.append("g")
-    .attr("class", "y axis")
-    .call(yAxis)
-    .append("text")
-    .attr("transform", "rotate(-90)")
-    .attr("x", -height / 2)
-    .attr("y", -50)
-    .attr("dy", "-3em")
-    .style("text-anchor", "middle")
-    .text("Global Sales in Millions of Dollars");
-});
 };
