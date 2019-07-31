@@ -24,9 +24,9 @@ function updateData(year) {
 d3.select("svg").remove();
 
 var margin = {
-    top: 100,
+    top: 10,
     right: 10,
-    bottom: 10,
+    bottom: 100,
     left: 100
   },
   width = 700 - margin.right - margin.left,
@@ -151,7 +151,7 @@ if (year == 2017) {
 else {
     svg.append("text")
         .attr("x", (width / 2))
-        .attr("y", 0 - (margin.top / 2))
+        .attr("y", 0 - (margin.bottom / 2))
         .attr("text-anchor", "middle")
         .style("font-size", "16px")
         .style("font-weight", "bold")
