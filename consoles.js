@@ -11,7 +11,9 @@ updateData(slider.value);
 
 function updateData(year) {
 
-d3.select("svg").remove();
+d3.selectAll(".bar").remove();
+//d3.selectAll(".axis").selectAll("text").remove();
+
 var margin = {
     top: 20,
     right: 10,
@@ -117,7 +119,7 @@ d3.csv("VGM-2.csv", function(error, csv_data) {
     .style("text-anchor", "end")
     .attr("font-size", "10px");
 
-  svg.append("g")
+  svg.append("gy")
     .attr("class", "y axis")
     .call(yAxis)
     .append("text")
