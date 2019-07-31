@@ -24,9 +24,9 @@ function updateData(year) {
 d3.select("svg").remove();
 
 var margin = {
-    top: 10,
+    top: 25,
     right: 10,
-    bottom: 100,
+    bottom: 75,
     left: 100
   },
   width = 700 - margin.right - margin.left,
@@ -142,7 +142,7 @@ d3.csv("VGM-2.csv", function(error, csv_data) {
 if (year == 2017) {
     svg.append("text")
         .attr("x", (width / 2))
-        .attr("y", 0)
+        .attr("y", -15)
         .attr("text-anchor", "middle")
         .style("font-size", "16px")
         .style("text-decoration", "underline")
@@ -151,7 +151,7 @@ if (year == 2017) {
 else {
     svg.append("text")
         .attr("x", (width / 2))
-        .attr("y", 50)
+        .attr("y", -10)
         .attr("text-anchor", "middle")
         .style("font-size", "16px")
         .style("font-weight", "bold")
