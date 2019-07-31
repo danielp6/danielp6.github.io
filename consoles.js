@@ -114,6 +114,7 @@ d3.csv("VGM-2.csv", function(error, csv_data) {
     });
 
     function updateData() {
+        console.log("UPDATING");
 
         d3.csv("VGM-2.csv", function(error, csv_data) {
           var data = d3.nest()
