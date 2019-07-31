@@ -109,7 +109,7 @@ d3.csv("VGM-2.csv", function(error, csv_data) {
     .append('text')
 
   svg.append("g")
-    .attr("class", "xAxis")
+    .attr("class", "x axis")
     .attr("transform", "translate(0," + height + ")")
     .call(xAxis)
     .selectAll("text")
@@ -120,7 +120,7 @@ d3.csv("VGM-2.csv", function(error, csv_data) {
     .attr("font-size", "10px");
 
   svg.append("g")
-    .attr("class", "yAxis")
+    .attr("class", "y axis")
     .call(yAxis)
     .append("text")
     .attr("transform", "rotate(-90)")
