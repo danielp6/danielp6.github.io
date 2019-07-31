@@ -18,11 +18,11 @@ svg {
 }
 
 .bar {
-    fill: #336699;
+    fill: #4040a1;
 }
 
 .bar:hover {
-  fill: #e67300 ;
+  fill: #bc5a45 ;
 }
 
 .button {
