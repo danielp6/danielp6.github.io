@@ -24,13 +24,13 @@ function updateData(year) {
 d3.select("svg").remove();
 
 var margin = {
-    top: 10,
-    right: 10,
+    top: 100,
+    right: 100,
     bottom: 100,
     left: 100
   },
-  width = 700 - margin.right - margin.left,
-  height = 500 - margin.top - margin.bottom;
+  width = 1050 - margin.right - margin.left,
+  height = 750 - margin.top - margin.bottom;
 
 var svg = d3.select("body")
   .append("svg")
@@ -141,8 +141,8 @@ d3.csv("VGM-2.csv", function(error, csv_data) {
 
 if (year == 2017) {
     svg.append("text")
-        .attr("x", 10)
-        .attr("y", 10)
+        .attr("x", (width / 2))
+        .attr("y", 0 - (margin.top / 2))
         .attr("text-anchor", "middle")
         .style("font-size", "16px")
         .style("text-decoration", "underline")
@@ -150,8 +150,8 @@ if (year == 2017) {
         .text("1980-2016"); }
 else {
     svg.append("text")
-        .attr("x", 20)
-        .attr("y", 50)
+        .attr("x", (width / 2))
+        .attr("y", 0 - (margin.top / 2))
         .attr("text-anchor", "middle")
         .style("font-size", "16px")
         .style("font-weight", "bold")
