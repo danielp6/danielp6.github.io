@@ -95,10 +95,10 @@ d3.csv("VGM-2.csv", function(error, csv_data) {
     .attr("y", height)
     .on('mouseover', tip.show)
     .on('mouseout', tip.hide)
-    .transition().duration(1500)
-    .delay(function(d, i) {
-      return i * 200;
-    })
+    .transition().duration(2500)
+    // .delay(function(d, i) {
+    //   return i * 200;
+    // })
     .attr({
       "x": function(d) {
         return xScale(d.Platform);
@@ -146,14 +146,15 @@ if (year == 2017) {
         .attr("text-anchor", "middle")
         .style("font-size", "16px")
         .style("text-decoration", "underline")
+        .style("font-weight", "bold")
         .text("1980-2016"); }
 else {
     svg.append("text")
         .attr("x", (width / 2))
         .attr("y", 0 - (margin.top / 2))
         .attr("text-anchor", "middle")
-        .style("font-size", "20px")
-        .style("text-decoration", "bold")
+        .style("font-size", "16px")
+        .style("font-weight", "bold")
         .style("text-decoration", "underline")
         .text(year); }
 });
