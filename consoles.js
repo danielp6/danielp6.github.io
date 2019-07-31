@@ -24,8 +24,8 @@ function updateData(year) {
 d3.select("svg").remove();
 
 var margin = {
-    top: 20,
-    right: 10,
+    top: 100,
+    right: 100,
     bottom: 100,
     left: 100
   },
@@ -152,7 +152,7 @@ else {
         .attr("x", (width / 2))
         .attr("y", 0 - (margin.top / 2))
         .attr("text-anchor", "middle")
-        .style("font-size", "16px") 
+        .style("font-size", "16px")
         .style("text-decoration", "underline")
         .text(year); }
 });
