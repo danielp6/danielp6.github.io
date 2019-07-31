@@ -1,18 +1,27 @@
-var slider = document.getElementById("myRange");
-// var output = document.getElementById("demo");
-// output.innerHTML = slider.value; // Display the default slider value
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
 
-// Update the current slider value (each time you drag the slider handle)
-slider.oninput = function() {
-console.log(slider.value);
-updateData(slider.value);
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
 }
 
 
 function updateData(year) {
 
-d3.selectAll(".bar").remove();
-//d3.selectAll(".axis").selectAll("text").remove();
+d3.select("svg").remove();
 
 var margin = {
     top: 20,

@@ -13,9 +13,14 @@
     <h1 style="text-align:center;">498DV DRP</h1>
     <button onclick="window.location.href = 'https://danielp6.github.io/manufacturers.html';">Click Here</button>
     <button onclick="updateData(2001);">Update</button>
-    <div class="slidecontainer">
-        <input type="range" min="1980" max="2017" value="2017" class="slider" id="myRange">
-    </div>
+    <div class="dropdown">
+ <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+ <div id="myDropdown" class="dropdown-content">
+   <button onclick="updateData(2001);">Link 1</button>
+   <a href="#">Link 2</a>
+   <a href="#">Link 3</a>
+ </div>
+</div>
     <script type="text/javascript" src="./consoles.js"></script>
     <script type="text/javascript">updateData(2017);</script>
 
