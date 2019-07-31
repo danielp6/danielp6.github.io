@@ -147,6 +147,8 @@ function updateData(year) {
         return d.Global_Sales;
       })]);
 
+      var svg = d3.select("body");
+
       svg.selectAll(".bar")
         .data(data)
         .enter()
