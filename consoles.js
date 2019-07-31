@@ -111,6 +111,7 @@ d3.csv("VGM-2.csv", function(error, csv_data) {
     .attr("dy", "-3em")
     .style("text-anchor", "middle")
     .text("Global Sales in Millions of Dollars");
+    });
 
     function updateData() {
 
@@ -170,4 +171,4 @@ d3.csv("VGM-2.csv", function(error, csv_data) {
             });
 
 
-})}});
+})};
