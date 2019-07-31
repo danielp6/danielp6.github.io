@@ -24,9 +24,9 @@ function updateData(year) {
 d3.select("svg").remove();
 
 var margin = {
-    top: 100,
-    right: 100,
-    bottom: 100,
+    top: 60,
+    right: 10,
+    bottom: 10,
     left: 100
   },
   width = 700 - margin.right - margin.left,
