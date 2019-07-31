@@ -77,7 +77,7 @@ d3.csv("VGM-2.csv", function(error, csv_data) {
     .attr('class', 'd3-tip')
     .offset([-10, 0])
     .html(function(d) {
-      return "<strong>Sales:</strong> <span style='color: #e67300'>" + (d.Global_Sales).toFixed(2) + "</span>";
+      return "<strong>Sales:</strong> <span style='color: #E37222'>" + (d.Global_Sales).toFixed(2) + "</span>";
     });
   svg.call(tip);
 

@@ -18,15 +18,15 @@ svg {
 }
 
 .bar {
-    fill: #4040a1;
+    fill: #07889B;
 }
 
 .bar:hover {
-  fill: #bc5a45 ;
+  fill: #E37222;
 }
 
 .button {
- background-color: #3498DB;
+ background-color: #66B9BF;
  color: white;
  padding: 16px;
  font-size: 16px;
@@ -36,7 +36,7 @@ svg {
 
 /* Dropdown button on hover & focus */
 .button:hover, .button:focus {
- background-color: #2980B9;
+ background-color: #07889B;
 }
 
 .d3-tip {
