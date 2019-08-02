@@ -26,7 +26,7 @@ svg {
 }
 
 .button {
- background-color: #66B9BF;
+ background-color: #07889B;
  color: white;
  padding: 16px;
  font-size: 16px;
@@ -36,7 +36,7 @@ svg {
 
 /* Dropdown button on hover & focus */
 .button:hover, .button:focus {
- background-color: #07889B;
+ background-color: #66B9BF;
 }
 
 .d3-tip {
