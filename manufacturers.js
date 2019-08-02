@@ -1,11 +1,34 @@
+
+function dropDownFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    for (var i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+
+function updateData(year) {
+
+d3.select("svg").remove();
+
 var margin = {
-    top: 20,
-    right: 10,
+    top: 100,
+    right: 100,
     bottom: 100,
     left: 100
   },
-  width = 700 - margin.right - margin.left,
-  height = 500 - margin.top - margin.bottom;
+  width = 840 - margin.right - margin.left,
+  height = 600 - margin.top - margin.bottom;
 
 var svg = d3.select("body")
   .append("svg")
@@ -30,14 +53,16 @@ var yAxis = d3.svg.axis()
   .scale(yScale)
   .orient("left");
 
-d3.csv("VGM-3.csv", function(error, csv_data) {
+d3.csv("VGM-2.csv", function(error, csv_data) {
   var data = d3.nest()
     .key(function(d) {
       return d.Manufacturer;
     })
     .rollup(function(d) {
       return d3.sum(d, function(g) {
-        return g.Global_Sales;
+
+          if (year == 2017){ return g.Global_Sales;}
+          else {if (g.Year_of_Release == year) return g.Global_Sales;}
       });
     }).entries(csv_data);
 
@@ -54,8 +79,7 @@ d3.csv("VGM-3.csv", function(error, csv_data) {
     });
   svg.call(tip);
 
-  xScale.domain(["Atari", "Microsoft", "Nintendo", "PC", "Sega", "Sony"]);
-
+  xScale.domain(["2600","3DS","DC","DS","GB","GBA","GC","GEN","PS2","XB","X360","PS","Wii","PSV","PSP","PS3","N64","NES","PC","PS4","SAT","SNES","WiiU","XOne"]);
   yScale.domain([0, d3.max(data, function(d) {
     return d.Global_Sales;
   })]);
@@ -70,9 +94,9 @@ d3.csv("VGM-3.csv", function(error, csv_data) {
     .on('mouseover', tip.show)
     .on('mouseout', tip.hide)
     .transition().duration(2500)
-    .delay(function(d, i) {
-      return i * 200;
-    })
+    // .delay(function(d, i) {
+    //   return i * 200;
+    // })
     .attr({
       "x": function(d) {
         return xScale(d.Manufacturer);
@@ -113,5 +137,23 @@ d3.csv("VGM-3.csv", function(error, csv_data) {
     .style("text-anchor", "middle")
     .text("Global Sales in Millions of Dollars");
 
-
+if (year == 2017) {
+    svg.append("text")
+        .attr("x", (width / 2))
+        .attr("y", 0 - (margin.top / 2))
+        .attr("text-anchor", "middle")
+        .style("font-size", "16px")
+        .style("text-decoration", "underline")
+        .style("font-weight", "bold")
+        .text("1980-2016"); }
+else {
+    svg.append("text")
+        .attr("x", (width / 2))
+        .attr("y", 0 - (margin.top / 2))
+        .attr("text-anchor", "middle")
+        .style("font-size", "16px")
+        .style("font-weight", "bold")
+        .style("text-decoration", "underline")
+        .text(year); }
 });
+};
