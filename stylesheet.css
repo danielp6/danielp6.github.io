@@ -70,7 +70,7 @@ svg {
 
 /* Dropdown Button */
 .dropbtn {
- background-color: #66B9BF;
+ background-color: #07889B;
  color: white;
  padding: 16px;
  font-size: 16px;
@@ -80,7 +80,7 @@ svg {
 
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
- background-color: #07889B;;
+ background-color: #66B9BF;
 }
 
 /* The container <div> - needed to position the dropdown content */
