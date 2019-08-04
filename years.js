@@ -130,4 +130,10 @@ d3.csv("VGM-1.csv", function(error, csv_data) {
     .style("text-anchor", "middle")
     .text("Global Sales in Millions of Dollars");
 
+    const makeAnnotations = d3.annotation()
+  .annotations(annotations)
+d3.select("#example1")
+  .append("g")
+  .call(makeAnnotations)
+
 });
