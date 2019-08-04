@@ -135,5 +135,5 @@ d3.csv("VGM-1.csv", function(error, csv_data) {
 d3.select("#example1")
   .append("g")
   .call(makeAnnotations)
-
+//
 });
