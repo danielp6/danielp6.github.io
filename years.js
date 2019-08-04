@@ -7,19 +7,6 @@ var margin = {
   width = 840 - margin.right - margin.left,
   height = 600 - margin.top - margin.bottom;
 
-  const annotations = [
-  {
-    note: {
-      label: "Here is the annotation label",
-      title: "Annotation title"
-    },
-    x: 300,
-    y: 300,
-    dy: 200,
-    dx: 200
-  }
-]
-
 var svg = d3.select("body")
   .append("svg")
   .attr({
@@ -130,10 +117,4 @@ d3.csv("VGM-1.csv", function(error, csv_data) {
     .style("text-anchor", "middle")
     .text("Global Sales in Millions of Dollars");
 
-    const makeAnnotations = d3.annotation()
-  .annotations(annotations)
-d3.select("#example1")
-  .append("g")
-  .call(makeAnnotations)
-//
 });
