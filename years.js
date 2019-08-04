@@ -117,4 +117,14 @@ d3.csv("VGM-1.csv", function(error, csv_data) {
     .style("text-anchor", "middle")
     .text("Global Sales in Millions of Dollars");
 
+    // Annotation
+    svg.append("text")
+    .attr("x", (width - 470))
+    .attr("y", 50)
+    .attr("text-anchor", "right")
+    .style("font-size", "12px")
+    .style("font-weight", "bold")
+    .text("Sales of Console Games peaked in 2008");
+
+
 });
