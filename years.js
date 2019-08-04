@@ -120,7 +120,7 @@ d3.csv("VGM-1.csv", function(error, csv_data) {
     // Annotation
     svg.append("text")
     .attr("x", (width - 470))
-    .attr("y", 50)
+    .attr("y", 20)
     .attr("text-anchor", "right")
     .style("font-size", "12px")
     .style("font-weight", "bold")
