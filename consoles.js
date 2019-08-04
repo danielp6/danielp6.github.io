@@ -137,12 +137,6 @@ d3.csv("VGM-2.csv", function(error, csv_data) {
     .style("text-anchor", "middle")
     .text("Global Sales in Millions of Dollars");
 
-// new new
-    svg.append("rect")
-        .style("left", 300)
-        .style("right", 300)
-        .html("this is some text");
-
 if (year == 2017) {
     svg.append("text")
         .attr("x", (width / 2))
@@ -161,5 +155,14 @@ else {
         .style("font-weight", "bold")
         .style("text-decoration", "underline")
         .text(year); }
+
+svg.append("text")
+.attr("x", (width / 4))
+.attr("y", 0 - (margin.top / 3))
+.attr("text-anchor", "right")
+.style("font-size", "12px")
+.style("font-weight", "bold")
+.text("Mobile Platforms: 3DS - WiiU");
+
 });
 };
