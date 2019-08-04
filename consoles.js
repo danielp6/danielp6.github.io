@@ -139,8 +139,8 @@ d3.csv("VGM-2.csv", function(error, csv_data) {
 
 // new new
     svg.append("rect")
-        .style("left", 100)
-        .style("right", 100)
+        .style("left", 300)
+        .style("right", 300)
         .html("this is some text");
 
 if (year == 2017) {
