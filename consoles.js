@@ -154,11 +154,20 @@ else {
         .style("font-size", "16px")
         .style("font-weight", "bold")
         .style("text-decoration", "underline")
-        .text(year); }
+        .text(year);
+
+        svg.append("text")
+        .attr("x", (width- 75))
+        .attr("y", 100)
+        .attr("text-anchor", "right")
+        .style("font-size", "12px")
+        .style("font-weight", "bold")
+        .text("Mobile Platforms: 3DS - WiiU");
+}
 
 svg.append("text")
-.attr("x", (width / 4))
-.attr("y", 0 - (margin.top / 3))
+.attr("x", (width))
+//.attr("y", 0 - (margin.top / 3))
 .attr("text-anchor", "right")
 .style("font-size", "12px")
 .style("font-weight", "bold")
