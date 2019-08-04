@@ -7,6 +7,19 @@ var margin = {
   width = 840 - margin.right - margin.left,
   height = 600 - margin.top - margin.bottom;
 
+  const annotations = [
+  {
+    note: {
+      label: "Here is the annotation label",
+      title: "Annotation title"
+    },
+    x: 300,
+    y: 300,
+    dy: 200,
+    dx: 200
+  }
+]
+
 var svg = d3.select("body")
   .append("svg")
   .attr({
