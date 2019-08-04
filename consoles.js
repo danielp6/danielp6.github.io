@@ -137,6 +137,12 @@ d3.csv("VGM-2.csv", function(error, csv_data) {
     .style("text-anchor", "middle")
     .text("Global Sales in Millions of Dollars");
 
+// new new
+    svg.append("rect")
+        .style("left", 100)
+        .style("right", 100)
+        .html("this is some text");
+
 if (year == 2017) {
     svg.append("text")
         .attr("x", (width / 2))
