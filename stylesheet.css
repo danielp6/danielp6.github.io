@@ -34,7 +34,6 @@ svg {
  cursor: pointer;
 }
 
-/* Dropdown button on hover & focus */
 .button:hover, .button:focus {
  background-color: #66B9BF;
 }
@@ -110,5 +109,4 @@ svg {
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {background-color: #ddd}
 
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}

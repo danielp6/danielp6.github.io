@@ -159,7 +159,7 @@ else {
 
 // Annotation
 svg.append("text")
-.attr("x", (width - 150))
+.attr("x", (width - 160))
 .attr("y", 100)
 .attr("text-anchor", "right")
 .style("font-size", "12px")

@@ -117,5 +117,22 @@ d3.csv("VGM-1.csv", function(error, csv_data) {
     .style("text-anchor", "middle")
     .text("Global Sales in Millions of Dollars");
 
+    var annotations = [
+  {
+    "cx": 40,
+    "cy": 100,
+    "r": 25,
+    "text": "Something important you should know",
+    "textWidth": 150,
+    "textOffset": [35, 40]
+  }
+];
+
+svg.append("g")
+    .attr("class", "annotations")
+    .call(ringNote, annotations)
+  .selectAll(".annotation circle")
+    .style("fill", "none");
+
 
 });
